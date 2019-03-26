@@ -7,7 +7,7 @@
       <h1><a href="">성으니의 첫 장고 블로그</a></h1>
     </div>
 
-    <div>
+    <!-- <div>
       <p>published: 2019.03.26 화요일</p>
       <h2><a href="">My first post</a></h2>
       <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
@@ -16,7 +16,15 @@
     <div>
       <p>published: 2019.04.03</p>
       <h2><a href="">My second post</a></h2>
-      <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+      <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p> -->
+
+      {% for post in posts %}
+        <div>
+          <p>published: {{ post.published_date }}</p>
+          <h1><a href="">{{ post }}</a></h1>
+          <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+      {% endfor %}
     </div>
   </body>
 </html>
