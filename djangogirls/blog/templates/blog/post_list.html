@@ -1,30 +1,30 @@
+{% load static %}
 <html>
   <head>
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     <title>Ssungnni's blog</title>
   </head>
   <body>
-    <div>
+    <div class="page-header">
       <h1><a href="">성으니의 첫 장고 블로그</a></h1>
     </div>
 
-    <!-- <div>
-      <p>published: 2019.03.26 화요일</p>
-      <h2><a href="">My first post</a></h2>
-      <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    </div>
-
-    <div>
-      <p>published: 2019.04.03</p>
-      <h2><a href="">My second post</a></h2>
-      <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p> -->
-
-      {% for post in posts %}
-        <div>
-          <p>published: {{ post.published_date }}</p>
-          <h1><a href="">{{ post }}</a></h1>
-          <p>{{ post.text|linebreaksbr }}</p>
+    <div class="content container">
+      <div class="row">
+        <div class="col-md-8">
+          {% for post in posts %}
+            <div class="post">
+              <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+          {% endfor %}
+          </div>
         </div>
-      {% endfor %}
+      </div>
     </div>
   </body>
 </html>
